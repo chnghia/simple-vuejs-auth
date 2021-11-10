@@ -1,0 +1,70 @@
+baseURL = 'https://techblogdemo.netlify.app/'
+languageCode = 'en-us'
+title = 'Blog công nghệ'
+
+[params]
+
+   [params.logo]
+    main = "/image/blog_logo.png"
+    alt = "Logo Blog"
+
+  [params.site]
+    name = "Logo"
+
+
+    name = "Hugo Tailwindcss Starter"
+    description = "A simple bootstraped theme for Hugo, build with Tailwindcss."
+
+    github_user = "dirkolbrich"
+    github_repo = "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
+    github_banner = true
+
+    favicon = "favicon.ico"
+    
+ [params.homepage_meta_tags]
+    meta_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+    meta_og_title = "Tella"
+    meta_og_type = "website"
+    meta_og_url = "https://tella.pages.dev"
+    meta_og_image = "https://raw.githubusercontent.com/opera7133/tella/master/images/tn.png"
+    meta_og_description = "A Hugo Theme for OSSProject, Companies, Organization..."
+    meta_twitter_card = "summary_large_image"
+    meta_twitter_site = "@username"
+    meta_twitter_creator = "@username"
+
+    
+[menu]
+
+  [[menu.main]]
+    identifier = "home"
+    name = "Home"
+    url = "/"
+    weight = 1
+
+      [[menu.main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 2
+
+
+  [[menu.main]]
+    identifier = "blog"
+    name = "Blog"
+    url = "/blog/"
+    weight = 3
+
+  [[menu.main]]
+    identifier = "contact"
+    name = "Contact"
+    url = "/contact/"
+    weight = 4
+
+
+[build]
+  writeStats = true
+
+# syntax highlight settings
+[markup]
+  [markup.highlight]
+    style = "dracula"

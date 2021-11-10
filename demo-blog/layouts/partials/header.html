@@ -1,0 +1,37 @@
+<header class="w-full px-4 pt-4 z-50 h-screen relative">
+     {{/*  CSS functionality for menu toggle  */}}
+    <style type="text/css">
+        input#nav-toggle:checked~label#show-button {
+            display: none;
+        }
+
+        input#nav-toggle:checked~label#hide-button {
+            display: flex;
+        }
+
+        input#nav-toggle:checked~#nav-menu {
+            display: block;
+        }
+    </style>
+   
+   <nav class="flex items-center justify-between flex-wrap relative z-50">
+    <a href="{{ .Site.BaseURL }}"><img alt="{{ .Site.Params.logo.alt }}" class="h-40 mr-3"
+        src="{{ .Site.Params.logo.main | relURL }}"></a>    
+    <div class="text-lg">
+        {{ range .Site.Menus.main }}
+        <a href="{{ .URL }}" class="duration-200 block mt-4 lg:inline-block lg:mt-0 text-white hover:opacity-60 mr-8 text-2xl">
+            {{ .Name }}
+        </a>
+        {{ end }}
+    </div>
+
+    <!-- <button  class="font-bold w-32 py-4 bg-green-400 font-mono text-white hover:bg-white hover:text-green-400 transition delay-150 text-xl rounded">Login</button> -->
+    <div id="app"></div>
+</nav>
+    
+    <div class="bg-background-header bg-cover w-full h-full absolute bg-center top-0 left-0"></div>
+     <div class="hidden w-full block flex-grow lg:flex lg:items-center lg:w-auto" id="mobileMenu">
+            <div class="text-lg lg:flex-grow">
+            </div>
+        </div>
+</header>
