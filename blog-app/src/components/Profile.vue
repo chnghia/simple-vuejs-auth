@@ -19,9 +19,15 @@
               <p class="text-l pt-1 font-light text-gray-700">{{currentUser.email}}</p>
             </div>
           </div>
-        </div> 
-         <div class="flex px-4">
-                 <button @click="logout()" class="flex flex-row py-2 bg-red-400 text-white rounded px-2 font-semibold mt-2">
+        </div>
+         <div class="flex px-4 flex-row justify-between">
+                  <button @click="dashboard()" class="flex flex-row py-2 bg-gray-900 text-white rounded px-2 font-semibold mt-2">
+                    Dashboard 
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+                    </svg>
+                  </button>
+                 <button @click="logout()" class="flex flex-row py-2 rounded px-2 font-semibold mt-2">
                    Log out 
                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 ml-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
@@ -60,7 +66,10 @@ export default {
           location.reload();
           console.error("problem with logout", error);
         });
-    }
+    },
+      dashboard(){
+        window.location.href = "/admin";
+      }
     },
     computed:
     { ...mapGetters("auth", ["currentUser"]) }
