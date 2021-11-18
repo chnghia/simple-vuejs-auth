@@ -177,15 +177,13 @@ export default {
      * @param {string} token - token from confimration email eg. "BFX7olHxIwThlfjLGGfaCA"
      */
     attemptConfirmation({ state }, token) {
-      console.log("Attempting to verify token", token);
       return new Promise((resolve, reject) => {
         state.GoTrueAuth.confirm(token)
           .then(response => {
-            console.log("User has been confirmed");
             resolve(response);
           })
           .catch(error => {
-            console.log("An error occurred trying to confirm the user", error);
+            console.log(error);
             reject(error);
           });
       });
@@ -201,8 +199,7 @@ export default {
         state.GoTrueAuth.currentUser()
           .logout()
           .then(resp => {
-            console.log("User logged out", resp);
-            alert("you have logged out");
+            alert("You have logged out");
             commit("SET_CURRENT_USER", null);
             resolve(resp);
           })
