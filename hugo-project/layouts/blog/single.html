@@ -4,35 +4,55 @@
 <meta property="fb:app_id" content="{{ . }}" />
 {{- end }}
 <meta name="twitter:title" content="{{ .Title }}">
-<link rel="preload" href="{{ "/css/monokai-sublime.min.css" | relURL }}" as="style"
+<link rel="preload" href="{{ " /css/monokai-sublime.min.css" | relURL }}" as="style"
     onload="this.onload=null;this.rel='stylesheet'">
-    <link rel="preload" href="{{ "/css/sweetalert2.min.css" | relURL }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<link rel="preload" href="{{ " /css/sweetalert2.min.css" | relURL }}" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
 {{ end }}
 {{ define "main" }}
-<div class="mx-auto my-10 max-w-6xl">
-    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
-        <h1 class="title text-5xl">{{.Title}}</h1>
-        <section class="mb-4">
-            <hr class="my-2">
-            <h4 id="date"><span class="icon-access_time text-xl mr-2"></span>{{ .Date.Format "2006/01/02" }} </h4>
+<div class="w-full float-left relative h-96">
+    <img class="w-full h-full object-cover object-center absolute" style="filter:brightness(.6);" src="{{ .Params.image | absURL }}"
+        alt="{{.Title}}">
+    <div class="absolute bottom-0 left-0 p-4 text-white">
+        <h1 class="title text-5xl text-white mb-5">{{.Title}}</h1>
+        <div class="flex flex-row justify-items-start">
             {{ if .Params.author }}
-            <h4><span class="icon-person text-xl mt-1 mr-2"></span>{{.Params.author}}</h4>
-            {{ end }}
+            <h4>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 float-left" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                        clip-rule="evenodd" />
+                </svg>
+                {{.Params.author}}
+            </h4>
+            <h4 class="ml-5">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 float-left" viewBox="0 0 20 20"
+                    fill="currentColor">
+                    <path fill-rule="evenodd"
+                        d="M6 2a1 1 0 00-1 1v1H4a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-1V3a1 1 0 10-2 0v1H7V3a1 1 0 00-1-1zm0 5a1 1 0 000 2h8a1 1 0 100-2H6z"
+                        clip-rule="evenodd" />
+                </svg>
+                {{ .Date.Format "02/01/2006" }}
+            </h4>
+        </div>
+        {{ end }}
+    </div>
+</div>
+</div>
+<div class="mx-auto my-10 max-w-5xl clear-both">
+    <div class="mx-3 col-span-3 lg:col-span-2 px-2">
+        <section class="mb-4">
             {{ with .Params.categories }}
             <div id="categories">
                 <span class="icon-folder text-xl"></span>
                 {{ range . }}
-                <span
-                    class="inline-flex py-1 leading-4 content-center justify-center px-1 hover:text-black"><a
-                        href="{{ "categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
+                <span class="inline-flex py-1 leading-4 content-center justify-center px-1 hover:text-black"><a
+                        href="{{ " categories" | absURL}}/{{ . | urlize }}">{{ . }}</a></span>
                 {{ end }}
             </div>
             {{ end }}
             <hr class="my-2">
         </section>
-        {{ if .Params.image }}
-        <img class="my-4" src="{{ .Params.image | absURL }}">
-        {{ end }}
         <div class="content py-1">{{.Content}}</div>
         <hr class="py-4">
         {{- with .Site.Params.disqusShortname }}
@@ -64,5 +84,4 @@
             </div>
         </aside>
     </div>
-</div>
-{{ end }}
+    {{ end }}
