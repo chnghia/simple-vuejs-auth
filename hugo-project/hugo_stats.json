@@ -299,12 +299,14 @@
       "text-gray-700",
       "text-green-400",
       "text-indigo-600",
+      "text-justify",
       "text-left",
       "text-md",
       "text-sm",
       "text-white",
       "text-xl",
       "title",
+      "title-blog",
       "top-0",
       "transform",
       "transition",
@@ -330,6 +332,8 @@
       "blockquotes",
       "btn-close",
       "btn-open",
+      "bắt-đầu-với-hugo",
+      "bắt-đầu-với-vuejs",
       "code-block-indented-with-four-spaces",
       "code-block-with-backticks",
       "code-block-with-hugos-internal-highlight-shortcode",
@@ -353,10 +357,17 @@
       "paragraph",
       "tables",
       "thumb",
+      "triển-khai-với-netlify",
       "twitter-simple-shortcode",
+      "tìm-hiểu-hugo",
+      "tìm-hiểu-về-vuejs",
+      "tổng-kết",
       "unordered-list",
       "vimeo-simple-shortcode",
-      "youtube-privacy-enhanced-shortcode"
+      "xây-dựng-blog",
+      "xây-dựng-ứng-dụng-từ-vuejs",
+      "youtube-privacy-enhanced-shortcode",
+      "đưa-vuejs-vào-hugo"
     ]
   }
 }

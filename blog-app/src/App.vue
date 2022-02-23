@@ -1,11 +1,11 @@
 <template>
 <div>
   <div v-if="currentUser === null" class="flex flex-col">
-  <button @click="appear()" class="font-bold w-32 py-4 bg-green-400 font-mono text-white hover:bg-white hover:text-green-400 duration-200 text-xl rounded">Login</button>
+  <button @click="appear()" class="font-normal w-24 py-2 bg-green-400 font-mono text-white hover:bg-green-500 duration-200 text-l rounded">Login</button>
   <LoginForm :class="hide" @hideClass="updateAppear"/>
   </div>
   <div v-else class="flex flex-col">
-  <button @click="appearPro()" class="z-10 font-bold w-32 py-4 bg-gray-900 font-mono text-white hover:bg-white hover:text-gray-900 duration-200 text-xl rounded">Profile</button> 
+  <button @click="appearPro()" class="z-10 font-bold w-24 py-4 bg-gray-900 font-mono text-white hover:bg-gray-500 duration-200 text-l rounded">Profile</button> 
   <Profile :class="appearProfile" @hideClass="updateAppearPro"/>
   </div>
 </div>
@@ -57,7 +57,6 @@ export default {
 </script>
 <style scoped>
 .hide{
-  opacity: 0;
-  z-index: -100;
+  display: none !important;
 }
 </style>

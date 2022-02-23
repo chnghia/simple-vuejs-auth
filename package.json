@@ -1,6 +1,6 @@
 {
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "serve" : "cd blog-app && npm run build:local && cd .. && cp -r blog-app/dist/css/app.css hugo-project/assets/css && cp -r blog-app/dist/js hugo-project/static/assets && cd hugo-project && hugo serve"
+        "serve" : "cd blog-app && npm run build:local && cd .. && cp -r blog-app/dist/css/app.css hugo-project/static/assets/css && cp -r blog-app/dist/js hugo-project/static/assets && cd hugo-project && hugo serve"
     }
 }
