@@ -1,5 +1,5 @@
 baseURL = 'https://techblogdemo.netlify.app/'
-languageCode = 'en-us'
+languageCode = 'vn'
 title = 'Blog công nghệ'
 
 [params]
@@ -13,10 +13,10 @@ title = 'Blog công nghệ'
 
 
     name = "Hugo Tailwindcss Starter"
-    description = "A simple bootstraped theme for Hugo, build with Tailwindcss."
+    description = "Technology Blog, written by Manh Tuan & Quoc An"
 
-    github_user = "dirkolbrich"
-    github_repo = "https://github.com/dirkolbrich/hugo-theme-tailwindcss-starter"
+    github_user = "cuibapn2014"
+    github_repo = "https://github.com/cuibapn2014/demo-blog"
     github_banner = true
 
     favicon = "favicon.ico"
